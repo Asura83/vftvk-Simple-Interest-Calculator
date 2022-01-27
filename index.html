@@ -1,16 +1,30 @@
 <html>
     <head>
+    <title>Income Calculator</title>
     <script src="script.js"></script>
     <link rel="stylesheet" href="style.css">
     </head>
+    <div class="maindiv">
     <body>
         <h1>Simple Interest Calculator</h1>
 
         Amount <input type="number"  id="principal">  <br/>
         Rate <input type="number"  id="rate">  <br/>
-        No. of Years <input type="number"  id="years">  <br/>
-        Interest : <span id="result"></span><br>
+        No. of Years <input type="number"  id="years"><select id="years">
+            <option value="1">1</option>
+            <!-- fill in the rest of the values-->
+        </select>  <br/>
+        Interest :<input type="range"  id="rate" min="1" max="20" value="10.25">
+        <span id="rate_val">10.25%</span>
+         <span id="result"></span><br>
+        <button onclick="Compute()">Compute Interest</button>
+        <span id="result"></span>
+        <footer>
 
-        <button onclick="compute()">Compute</button>
+            &#169; This Calculator belongs to RAZVAN
+    
+    
+    </footer>
     </body>
+</div>
 </html>
