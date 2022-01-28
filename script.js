@@ -13,3 +13,10 @@ function updateRate()
     document.getElementById("rate_val").innerText=rateval;
     document.getElementById("result").innerHTML="If you deposit "+principal+",\<br\>at an interest rate of "+rate+"%\<br\>You will receive an amount of "+amount+",\<br\>in the year "+year+"\<br\>"
 }
+window.onload = function () {
+    var slider = document.getElementById("slider");
+    slider.addEventListener("input", function () {
+        document.body.style.setProperty("--thumbNumber", "'" + this.value + "'");
+<span id="valBox"></span>
+<input type="range" min="5" max="10" step="1" 
+   oninput="showVal(this.value)" onchange="showVal(this.value)">
