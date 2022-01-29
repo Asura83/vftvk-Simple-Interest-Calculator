@@ -1,32 +1,21 @@
-window.onload = function(){
-    document.getElementById("rate").oninput = function(e){
-       updateRate();
-    };
-    updateRate();
-};
+function compute(){
+    const principal = document.getElementById("principal");
+    const rate = document.getElementById("rate");
+    const years = document.getElementById("years");
+    const interest = principal.value * years.value * rate.value /100;
+    const displayFinal = document.getElementById("result")
+
+    if(principal.value<=0 || principal.value ===null){
+        alert("kindly input a positive number");
+        principal.focus(); 
+    } else{
+        displayFinal.innerText = interest;
+    }
+        
+}   
 
 function updateRate(){
-    var target = document.getElementById("rate");
-    var counter = document.getElementById("rate_val");
-    counter.innerHTML = target.value + "%";
+    const rateval = document.getElementById("rate").value;
+    document.getElementById("rate_val").innerText=rateval + "%";
 }
-
-function compute(){
-    event.preventDefault();
-    var principal = document.getElementById("principal").value;
-    var rate = document.getElementById("rate").value;
-    var years = document.getElementById("years").value;
-    var interest = principal * years * rate /100;
-    var year = new Date().getFullYear() + parseInt(years);
-
-    if (!principal || principal <= 0){
-        alert("Enter a positive number");
-        document.getElementById("result").innerHTML = "";
-        document.getElementById("principal").focus();
-        return;
-    }
-
-    document.getElementById("result").innerHTML =  "If you deposit <mark>" + principal + "</mark>,<br />at an interest rate of <mark>" + rate + 
-        "%</mark><br />You will receive an amount of <mark>" + interest + "</mark>,<br /> in the year <mark>" + year + "</mark>";
-
-}
+        
